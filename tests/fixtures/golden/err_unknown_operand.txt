@@ -1,0 +1,6 @@
+=== exit 1 ===
+=== stdout ===
+
+=== stderr ===
+date: unknown operand: foo
+date: usage: date [-u] [-c] [-r seconds] [+format]

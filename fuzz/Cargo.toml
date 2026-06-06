@@ -1,0 +1,40 @@
+# Detached fuzz crate: the empty [workspace] makes this its own root, so the
+# parent tzdate-rs gate never compiles it.
+[package]
+name = "tzdate-rs-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[workspace]
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+[dependencies.tzdate-rs]
+path = ".."
+features = ["fuzzing"]
+
+[[bin]]
+name = "driver"
+path = "fuzz_targets/driver.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "parse_seconds"
+path = "fuzz_targets/parse_seconds.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "strftime"
+path = "fuzz_targets/strftime.rs"
+test = false
+doc = false
+bench = false

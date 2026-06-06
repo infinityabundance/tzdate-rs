@@ -1,0 +1,5 @@
+=== exit 1 ===
+=== stdout ===
+
+=== stderr ===
+date: error: multiple -r's useddate: usage: date [-u] [-c] [-r seconds] [+format]

@@ -1,0 +1,10 @@
+/target
+/fuzz/target
+/fuzz/corpus
+/fuzz/artifacts
+/fuzz/coverage
+Cargo.lock
+# Admitted upstream bundle + the compiled-zone oracle tree + the built C oracle:
+# pinned by sha256 in reports/admission, re-fetchable from data.iana.org.
+/lab/admit/
+/lab/oracle/tzdir/

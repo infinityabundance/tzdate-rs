@@ -1,0 +1,30 @@
+[package]
+name = "tzdate-rs"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+description = "Rust port of upstream tzcode date.c — the small standalone tzdate utility"
+license = "BSD-3-Clause"
+repository = "https://github.com/infinityabundance/tzdate-rs"
+homepage = "https://github.com/infinityabundance/tzdate-rs"
+authors = ["infinityabundance"]
+keywords = ["tzdb", "timezone", "date", "tzcode", "strftime"]
+categories = ["command-line-utilities"]
+readme = "README.md"
+exclude = ["lab/", "reports/", "fuzz/", "tests/fixtures/oracle/", ".gitignore", "STATUS.md"]
+
+[[bin]]
+name = "tzdate"
+path = "src/main.rs"
+
+[features]
+fuzzing = []
+
+# No runtime dependencies: the date.c port (CLI contract + a private, scoped
+# localtime/strftime covering exactly what date.c needs) is self-contained.
+
+[profile.release]
+overflow-checks = true
+
+[lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(kani)'] }

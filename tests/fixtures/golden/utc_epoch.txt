@@ -1,0 +1,5 @@
+=== exit 0 ===
+=== stdout ===
+Thu Jan  1 00:00:00 UTC 1970
+
+=== stderr ===
